@@ -1,0 +1,140 @@
+/*start -顶部提示部分*/  
+.tip-bar {
+  width: 700rpx;
+  height: 90rpx;
+  position: fixed;
+  left: 25rpx;
+  top: 38rpx;
+  background-color:#454545;
+  border-radius: 45rpx;
+  display: inline-flex;
+}
+.tip-image,.tip-text{
+  display:inline-flex;
+}
+.tip-image{
+  margin-left: 27rpx;
+  margin-top: 15rpx;
+  width:48rpx;
+  height:50rpx ;
+}
+.tip-text{  
+  margin-left: 20rpx;
+  margin-top: 33rpx;
+  margin-bottom: 33rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 27rpx;
+  color: #fff;
+  font-family: PingFangSC-Regular, sans-serif;  
+}
+.tip-store{
+  color:#ff7200;
+  font-weight: bold;
+  margin-left:15rpx;
+}
+/* end -顶部提示部分============================ */
+
+/*start -中心部分*/
+.center-lol{
+ position: fixed; 
+ bottom: 49%;
+ width:8%;
+ margin-left:46%;
+ margin-right:46%;
+}
+.center-img{
+  width:48rpx;
+  height:70rpx;
+}
+/*end -中心部分*/
+
+/*start 底部操作按钮的部分*/
+.foot-bar {
+  width:100%;
+  height: 310rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+.local,.right{
+  position: absolute;
+}
+.left-one{left:32rpx;}
+.left-two{left:30rpx;}
+.left-one,.right-one{top:0}
+.left-two{bottom:63rpx;}
+.right-one{right:17rpx;}
+.right-two{right:0;bottom:82rpx;}
+.local,.back-local,.right-one{
+  width:104rpx;
+  height:130rpx;
+  display:block;
+}
+/* 签到图片 */
+.day-write{
+  display:inline-block;
+  width: 100%;
+  text-align: center;
+}
+.write-img{
+  width:236rpx;
+  height:236rpx;
+  display: block;
+  margin:1rpx auto;
+}
+.right-local,.right-two{
+  width:122rpx;
+  height:114rpx;
+  display:block;
+}
+/*end 底部导航的部分*/
+
+/*start 弹出信息*/
+.store{
+  width:100%;
+  position: fixed;
+  display: flex;
+  background: #fff;
+}
+.store-detail{
+  width: 100%;
+}
+.address-icon{
+  width:30rpx;
+  height:30rpx;
+}
+.car-detail {
+  width: 100%;
+  height: 120rpx;
+  top:0;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+}
+.blue{background-color:#f4fbff;width: 100%;border:1rpx solid #eee;  padding-left: 33rpx; }
+.name-style{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#353535;
+  line-height: 27rpx;
+  margin-top:18rpx;
+}
+.address{display: inline-flex;line-height: 24rpx;margin-top: 16rpx;margin-bottom:25rpx; }
+.name-style,.address-info,.detail-word{  font-family: PingFangSC-Regular, sans-serif;}
+.address-info{color:#888888;font-size:20rpx;display: inline-flex;align-items: flex-end;}
+.detail-word{
+  position: absolute;
+  top:45rpx;
+  right:34rpx;
+  color: #ff7200;
+  font-size: 26rpx;
+}
+.detail-cancel {
+ position: absolute;
+ right: 5rpx;
+ top:-5rpx;
+ color: red;
+}
+
+/*end 车辆详情信息

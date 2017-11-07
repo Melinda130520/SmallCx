@@ -1,0 +1,11 @@
+
+<!--start 地图部分-->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: {{scheight}}px;">
+</map>
+
+<!--end 地图部分-->
+
+
+
+
+

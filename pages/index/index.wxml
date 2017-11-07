@@ -1,0 +1,59 @@
+
+<!--start 地图部分-->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: {{scheight}}px;">
+  <!--start 搜索部分-->
+  <cover-view class="tip-bar">
+     <cover-image class="tip-image" src="/resources/images/shouye/tips@2x.png"></cover-image>
+     <cover-view class="tip-text">
+     <cover-view>点击</cover-view><cover-view class="tip-store">【我的门店】</cover-view><cover-view>即可查看本人维护的所有门店哦！</cover-view></cover-view>
+  </cover-view>
+<!--end 中心部分-->
+  <cover-view class="center-lol">
+      <cover-image class="center-img" src="/resources/images/shouye/gprs-4@2x.png"></cover-image>
+  </cover-view>
+<!--start 底部导航的部分-->
+<cover-view class="foot-bar">
+ <!--左边部分-->
+  <cover-view class="local left-one" bindtap="backLocation">
+    <cover-image class="back-local" src="/resources/images/shouye/2icon-3@2x.png"></cover-image>
+  </cover-view>
+  <cover-view class="local left-two" bindtap="selectCarLength">
+    <cover-image class="back-local" src="/resources/images/shouye/2icon-1@2x.png"></cover-image>
+  </cover-view>
+  <!--中间部分签到-->
+  <cover-view class="day-write" bindtap="releaseGoods">
+    <cover-image class="write-img" src="/resources/images/shouye/qd@2x.png"></cover-image>
+  </cover-view>
+  <!--右边部分-->
+  <cover-view class="right right-one" bindtap="releaseGoods">
+    <cover-image class="back-local" src="/resources/images/shouye/2icon-2@2x.png"></cover-image>
+  </cover-view>
+  <cover-view class="right right-two" bindtap="mapStore">
+   <cover-image class="right-local" src="/resources/images/shouye/icon-me@2x.png"></cover-image>
+  </cover-view>
+</cover-view>
+<!--end 底部导航的部分-->
+<!--弹出信息-->
+<cover-view  class="store"  wx:if="{{store.isShowDetail}}">
+  <!--弹出门店信息-->
+ <cover-view class="store-detail">
+   <cover-view class="blue">
+      <cover-view class="name-style">{{store.storeDetal.name}}</cover-view>
+      <cover-view class="address">
+        <cover-image class="address-icon" src="/resources/images/shouye/gprs-1icon@2x.png"></cover-image>
+        <cover-view class="address-info">{{store.storeDetal.address}}</cover-view>
+      </cover-view>
+      <cover-view class="detail-word">详情</cover-view>
+   </cover-view>  
+  </cover-view>
+  <!--弹出拜访信息-->
+  <!-- <cover-view class="detail-cancel" type="cancel" bindtap="closeDetail">X</cover-view> -->
+</cover-view>
+ 
+</map>
+<!--end 地图部分-->
+
+
+
+
+

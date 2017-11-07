@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/carlist/carlist",
+    "pages/cartype/cartype",
+    "pages/carlength/carlength",
+    "pages/releasegoods/releasegoods",
+    "pages/logs/logs",
+    "pages/mapstore/mapstore"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff"
+  }
+}
