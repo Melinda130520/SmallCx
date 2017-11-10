@@ -19,7 +19,6 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-
 /**
  * 获取屏幕的高度
  */

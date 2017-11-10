@@ -1,3 +1,7 @@
+#map{
+  width:100%;
+  height: 100%;
+}
 /*start -顶部提示部分*/  
 .tip-bar {
   width: 700rpx;
@@ -7,8 +11,8 @@
   top: 38rpx;
   background-color:#454545;
   border-radius: 45rpx;
-  display: inline-flex;
 }
+.tip-list{display: inline-flex;}
 .tip-image,.tip-text{
   display:inline-flex;
 }
@@ -31,14 +35,13 @@
 .tip-store{
   color:#ff7200;
   font-weight: bold;
-  margin-left:15rpx;
 }
 /* end -顶部提示部分============================ */
 
 /*start -中心部分*/
 .center-lol{
  position: fixed; 
- bottom: 49%;
+ bottom: 49%;  
  width:8%;
  margin-left:46%;
  margin-right:46%;
@@ -48,7 +51,6 @@
   height:70rpx;
 }
 /*end -中心部分*/
-
 /*start 底部操作按钮的部分*/
 .foot-bar {
   width:100%;
@@ -91,28 +93,29 @@
 /*end 底部导航的部分*/
 
 /*start 弹出信息*/
+.show{display:block;}
+.hide{display: none;}
+/* 门店信息 */
 .store{
   width:100%;
   position: fixed;
-  display: flex;
-  background: #fff;
+  background: transparent;
 }
-.store-detail{
+.store-detail,.visit-detail{
   width: 100%;
+  height: auto;
+  display: block;
+}
+.visit-detail{
+  padding-top:10rpx;
 }
 .address-icon{
   width:30rpx;
   height:30rpx;
 }
-.car-detail {
-  width: 100%;
-  height: 120rpx;
-  top:0;
-  background-color: white;
-  border-radius: 10rpx;
-  display: flex;
-}
-.blue{background-color:#f4fbff;width: 100%;border:1rpx solid #eee;  padding-left: 33rpx; }
+.white{background-color: #fff;}
+.blue{position:relative;background-color:#f4fbff;border:1rpx solid #eee;}
+.white,.blue{  padding-left: 33rpx;width: 100%;margin-top:-2rpx; }
 .name-style{
   font-size: 30rpx;
   font-weight: bold;
@@ -121,20 +124,57 @@
   margin-top:18rpx;
 }
 .address{display: inline-flex;line-height: 24rpx;margin-top: 16rpx;margin-bottom:25rpx; }
-.name-style,.address-info,.detail-word{  font-family: PingFangSC-Regular, sans-serif;}
+.name-style,.address-info,.detail-word{ font-family: PingFangSC-Regular, sans-serif;}
 .address-info{color:#888888;font-size:20rpx;display: inline-flex;align-items: flex-end;}
 .detail-word{
   position: absolute;
   top:45rpx;
   right:34rpx;
+  margin-right: 34rpx;
   color: #ff7200;
   font-size: 26rpx;
 }
-.detail-cancel {
+/* 拜访次数 */
+.tovisit{
+  padding-top:34rpx;
+  padding-bottom: 37rpx;
+}
+.visit{
+  display: inline-flex;
+  border-right: 1rpx  #eeeeee solid ;
+}
+.orange{color:#ff7200;}
+.bgrey{color:#100863;}
+.times{font-size:40rpx;display: inline-flex;}
+.ci{font-size:24rpx;margin-left: 10rpx;display: inline-flex;line-height: 32rpx;align-items: flex-end;flex-direction: column-reverse;}
+.visit-li{text-align: right;font-family: PingFangSC-Regular, sans-serif; }
+.visit-week{margin-right:65rpx;}
+.visit-mon{margin-right:69rpx;}
+.week-time,.mon-time{display: inline-flex;margin-bottom: 20rpx;line-height: 32rpx;}
+.visit-detail{margin-top:10rpx;}
+.self-week,.self-mon{font-size:20rpx;}
+/* 门店信息 */
+.visit-list{
+  height: 110rpx;
+  display: inline-flex;
+  line-height: 110rpx;
+  align-items: center;
+}
+.visit-time,.person-tip,.person-name{color: #353535;display: inline-flex;font-family: PingFangSC-Regular, sans-serif;}
+.visit-time{font-size: 32rpx;margin-right: 48rpx;}
+.person-tip{font-size: 20rpx;margin-right: 19rpx;}
+.person-name{font-size: 30rpx;}
+.visit-info{display: flex;padding-top:25rpx;padding-bottom:20rpx;}
+.visitImage{width:150rpx;height: 100rpx;display: inline-flex;}
+.visit-word{display: inline-flex;margin-left:20rpx;margin-top:9rpx;margin-right:33rpx;}
+.word{font-size:18rpx;color:#353535; width: 514rpx; word-wrap:break-word;white-space:normal; word-break:break-all;line-height: 32rpx;align-items: center;}
+/* 其它代理人信息 */
+.daili{display:inline-flex;font-size:40rpx;color:#878787;margin:53rpx 131rpx 53rpx 130rpx;font-family: PingFangSC-Regular, sans-serif;}
+.detail-cancel{
  position: absolute;
  right: 5rpx;
  top:-5rpx;
  color: red;
 }
-
 /*end 车辆详情信息
+  

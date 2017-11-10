@@ -1,42 +1,29 @@
 
 <!--start 地图部分-->
-<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: {{scheight}}px;">
+<map id="map" longitude="{{longitude}}" bindtap="closeDetail" latitude="{{latitude}}" bindtap="closeDetail" scale="{{scale}}" markers="{{markers}}" controls="{{controls}}"  bindmarkertap="markertap" bindcontroltap="bindcontroltap"  bindregionchange="regionchange" show-location style="width: 100%; height: {{scheight}}px;">
   <!--start 搜索部分-->
-  <cover-view class="tip-bar">
-     <cover-image class="tip-image" src="/resources/images/shouye/tips@2x.png"></cover-image>
-     <cover-view class="tip-text">
-     <cover-view>点击</cover-view><cover-view class="tip-store">【我的门店】</cover-view><cover-view>即可查看本人维护的所有门店哦！</cover-view></cover-view>
+  <cover-view class="tip-bar" wx:if="{{!store.isShowDetai}}">
+    <cover-view class="tip-item">
+      <cover-view class="tip-list">
+        <cover-image class="tip-image" src="/resources/images/shouye/tips@2x.png"></cover-image>
+        <cover-view class="tip-text">
+        <cover-view>点击</cover-view><cover-view class="tip-store" bindtap="toStore"> 【我的门店】</cover-view><cover-view>即可查看本人维护的所有门店哦！</cover-view></cover-view>
+      </cover-view>
+    </cover-view>
+      <cover-view class="tip-item">
+      <cover-view class="tip-list">
+        <cover-image class="tip-image" src="/resources/images/shouye/tips@2x.png"></cover-image>
+        <cover-view class="tip-text">
+        <cover-view>点击</cover-view><cover-view class="tip-store" bindtap="toStore"> 【拜访足迹】</cover-view><cover-view>即可查看本人维护的所有门店哦！</cover-view></cover-view>
+      </cover-view>
+    </cover-view>
   </cover-view>
-<!--end 中心部分-->
-  <cover-view class="center-lol">
-      <cover-image class="center-img" src="/resources/images/shouye/gprs-4@2x.png"></cover-image>
-  </cover-view>
-<!--start 底部导航的部分-->
-<cover-view class="foot-bar">
- <!--左边部分-->
-  <cover-view class="local left-one" bindtap="backLocation">
-    <cover-image class="back-local" src="/resources/images/shouye/2icon-3@2x.png"></cover-image>
-  </cover-view>
-  <cover-view class="local left-two" bindtap="selectCarLength">
-    <cover-image class="back-local" src="/resources/images/shouye/2icon-1@2x.png"></cover-image>
-  </cover-view>
-  <!--中间部分签到-->
-  <cover-view class="day-write" bindtap="releaseGoods">
-    <cover-image class="write-img" src="/resources/images/shouye/qd@2x.png"></cover-image>
-  </cover-view>
-  <!--右边部分-->
-  <cover-view class="right right-one" bindtap="releaseGoods">
-    <cover-image class="back-local" src="/resources/images/shouye/2icon-2@2x.png"></cover-image>
-  </cover-view>
-  <cover-view class="right right-two" bindtap="mapStore">
-   <cover-image class="right-local" src="/resources/images/shouye/icon-me@2x.png"></cover-image>
-  </cover-view>
-</cover-view>
+
 <!--end 底部导航的部分-->
 <!--弹出信息-->
-<cover-view  class="store"  wx:if="{{store.isShowDetail}}">
+<cover-view  class="store {{store.isShowDetail?'show':'hide'}}">
   <!--弹出门店信息-->
- <cover-view class="store-detail">
+ <cover-view class="store-detail {{!store.isOther?'show':'hide'}}" >
    <cover-view class="blue">
       <cover-view class="name-style">{{store.storeDetal.name}}</cover-view>
       <cover-view class="address">
@@ -44,12 +31,56 @@
         <cover-view class="address-info">{{store.storeDetal.address}}</cover-view>
       </cover-view>
       <cover-view class="detail-word">详情</cover-view>
-   </cover-view>  
-  </cover-view>
+   </cover-view>
+   <cover-view class="white tovisit">
+      <cover-view class="visit">
+         <cover-view class="visit-li visit-week">           
+           <cover-view class="orange week-time"><cover-view class="times">{{store.storeDetal.weekTime}}</cover-view><cover-view class="ci">次</cover-view></cover-view>
+           <cover-view class="orange self-week">本周拜访</cover-view>
+         </cover-view>
+          <cover-view class="visit-li visit-mon">
+           <cover-view class="bgrey mon-time" ><cover-view class="times">{{store.storeDetal.monthTime}}</cover-view><cover-view class="ci">次</cover-view></cover-view>
+           <cover-view  class="bgrey self-mon">本月拜访</cover-view>
+         </cover-view>
+      </cover-view>      
+   </cover-view>   
+ </cover-view>
   <!--弹出拜访信息-->
   <!-- <cover-view class="detail-cancel" type="cancel" bindtap="closeDetail">X</cover-view> -->
+ <cover-view class="visit-detail {{!store.isOther?'show':'hide'}}" >
+   <cover-view class="blue visit-list">
+      <cover-view class="">
+        <cover-view class="visit-time">{{store.visitList.visitTime}}</cover-view>
+        <cover-view class="person-tip">拜访对象:</cover-view>
+        <cover-view class="person-name">{{store.visitList.person}}</cover-view>
+      </cover-view>
+      <cover-view class="detail-word">详情</cover-view>
+   </cover-view>
+   <cover-view class="white visit-info">
+      <cover-image src="{{store.visitList.visitImage}}" class="visitImage"></cover-image>
+      <cover-view class="visit-word">
+        <cover-view class="word">{{store.visitList.visitContent}}</cover-view>
+      </cover-view>   
+   </cover-view>   
+ </cover-view>
+ <!-- 其它代理人 -->
+ <cover-view class="srore-detail {{store.isOther?'show':'hide'}}">
+   <cover-view class="blue">
+      <cover-view class="name-style">{{store.storeDetal.name}}</cover-view>
+      <cover-view class="address">
+        <cover-image class="address-icon" src="/resources/images/shouye/gprs-1icon@2x.png"></cover-image>
+        <cover-view class="address-info">{{store.storeDetal.address}}</cover-view>
+      </cover-view>
+   </cover-view>
+   <cover-view class="white">
+      <cover-view class="daili">
+        该店已被其它代理人维护
+      </cover-view>   
+   </cover-view> 
+ </cover-view> 
+
 </cover-view>
- 
+ <!--  -->
 </map>
 <!--end 地图部分-->
 

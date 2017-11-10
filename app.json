@@ -1,11 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/carlist/carlist",
-    "pages/cartype/cartype",
-    "pages/carlength/carlength",
-    "pages/releasegoods/releasegoods",
     "pages/logs/logs",
+    "pages/qiandao/qiandao",
+    "pages/store/store",
     "pages/mapstore/mapstore"
   ],
   "window": {

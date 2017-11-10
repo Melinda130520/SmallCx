@@ -1,5 +1,5 @@
 
-var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 var util = require("../../utils/util.js"); 
 var qqmapsdk;
 Page({
